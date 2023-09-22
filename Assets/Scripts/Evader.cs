@@ -6,7 +6,7 @@ using System;
 public class Evader : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
-    public float jumpForce = 900.0f;
+    public float jumpForce = 8.0f;
     private Rigidbody2D rb;
     private bool isGrounded;
 
