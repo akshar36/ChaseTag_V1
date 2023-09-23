@@ -23,7 +23,7 @@ public class ChaserAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        InvokeRepeating("UpdatePath", 0f, 1f);
         
     }
 
@@ -61,7 +61,7 @@ public class ChaserAI : MonoBehaviour
             reachedEndofPath = false;
         }
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
+        Vector2 direction = ((Vector2) path.vectorPath[currentWayPoint] - rb.position).normalized;
         Vector2 force = direction*movespeed*Time.deltaTime;
 
         rb.AddForce(force);

@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 195457289}
-  movespeed: 900
-  nextWayPointDistance: 3
+  movespeed: 3000
+  nextWayPointDistance: 2
 --- !u!114 &82190233
 MonoBehaviour:
   m_ObjectHideFlags: 0
