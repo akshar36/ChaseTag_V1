@@ -47,5 +47,9 @@ public class Evader : MonoBehaviour
             Debug.Log("hit the ground");
             isGrounded = true;
         }
+        else
+        {
+            Debug.Log("Game Over");
+        }
     }
 }
