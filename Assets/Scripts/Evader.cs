@@ -32,6 +32,7 @@ public class Evader : MonoBehaviour
         if(!isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(floorprefab, transform.position, Quaternion.identity);
+            isGrounded = true;
         }
     }
 
@@ -42,7 +43,9 @@ public class Evader : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit the ground");
-        isGrounded = true;
+        if(collision.gameObject.layer == 6){
+            Debug.Log("hit the ground");
+            isGrounded = true;
+        }
     }
 }
