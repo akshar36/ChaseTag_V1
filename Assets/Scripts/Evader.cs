@@ -10,6 +10,8 @@ public class Evader : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
+    public GameObject floorprefab;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,9 +24,14 @@ public class Evader : MonoBehaviour
 
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyDown(KeyCode.W))
         {
             Jump();
+        }
+
+        if(!isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(floorprefab, transform.position, Quaternion.identity);
         }
     }
 
