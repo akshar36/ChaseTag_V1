@@ -10,6 +10,7 @@ public class Evader : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
+    private int platformCount = 3;
     public GameObject floorprefab;
 
     void Start()
@@ -29,9 +30,10 @@ public class Evader : MonoBehaviour
             Jump();
         }
 
-        if(!isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if(!isGrounded && Input.GetKeyDown(KeyCode.Space) && platformCount>0)
         {
             Instantiate(floorprefab, transform.position, Quaternion.identity);
+            platformCount--;
             isGrounded = true;
         }
     }
